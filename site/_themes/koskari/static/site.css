@@ -1,0 +1,84 @@
+/* koskari.org additions on top of style.css, which carries the shared
+   tokens and the landing-page components unchanged. */
+
+.ko-brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === Coming soon === */
+
+.ko-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 72px var(--ko-pad-x) 64px;
+}
+
+.ko-soon-mark {
+  margin-bottom: 28px;
+}
+
+.ko-soon .ko-lede {
+  margin-bottom: 30px;
+}
+
+.ko-soon-pill {
+  font-family: var(--ko-font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ko-accent);
+  background: var(--ko-bg-pill);
+  padding: 8px 16px;
+  border-radius: var(--ko-radius-pill);
+}
+
+.ko-soon-agents {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ko-soon-code {
+  font-family: var(--ko-font-mono);
+  font-size: 14px;
+  color: var(--ko-fg-code-shell);
+  overflow-wrap: anywhere;
+}
+
+/* === Prose pages (Markdown sources) === */
+
+.ko-prose {
+  max-width: 44em;
+  margin: 0 auto;
+  padding-top: 56px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ko-fg-muted);
+}
+
+.ko-prose h1 {
+  font-family: var(--ko-font-display);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -.02em;
+  color: var(--ko-fg);
+  margin: 0 0 18px;
+}
+
+.ko-prose a {
+  color: var(--ko-accent);
+  text-underline-offset: 2px;
+}
+
+.ko-prose a.headerlink { display: none; }
+
+@media (max-width: 620px) {
+  .ko-soon-mark { width: 104px; height: 104px; }
+  .ko-prose h1 { font-size: 34px; }
+}
+
+/* The end. */

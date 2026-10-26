@@ -1,0 +1,10 @@
+[theme]
+inherit = "none"
+stylesheets = [
+    "style.css",
+    "site.css",
+]
+sidebars = []
+pygments_style = { default = "none" }
+
+# The end.

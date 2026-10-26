@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ title|striptags|e }} -- Koskari{% endblock %}</title>
+  {%- block meta %}{% endblock %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Hanken+Grotesk:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  {#- Root-relative paths: GitHub Pages serves 404.html for a miss at
+      any depth, so page-relative links would break there. #}
+  <link rel="icon" type="image/svg+xml" href="/_static/koskari-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/_static/koskari-icon-32.png">
+  <link rel="apple-touch-icon" href="/_static/koskari-icon-256.png">
+  {%- for css in css_files %}
+  <link rel="stylesheet" href="/{{ css.filename }}">
+  {%- endfor %}
+  <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">
+</head>
+
+<body>
+<div class="ko-page">
+
+  <nav class="ko-nav">
+    <a class="ko-brand ko-brand-link" href="/">
+      <img src="/_static/koskari-icon.svg" alt="" width="34" height="34">
+      <span class="ko-brand-name">Koskari</span>
+    </a>
+  </nav>
+
+  <main>
+  {%- block content %}
+  <section class="ko-section ko-prose">
+    {{ body }}
+  </section>
+  {%- endblock %}
+  </main>
+
+  <footer class="ko-footer">
+    <div class="ko-footer-brand">
+      <img src="/_static/koskari-icon.svg" alt="" width="26" height="26">
+      <span class="ko-footer-name">Koskari</span>
+    </div>
+    <div class="ko-footer-meta">GPLv3 licensed &middot; <span class="ko-footer-end"># The end.</span></div>
+  </footer>
+
+</div>
+</body>
+</html>

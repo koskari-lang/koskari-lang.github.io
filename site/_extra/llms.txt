@@ -1,0 +1,53 @@
+# Koskari
+
+> Koskari is a Lisp dialect for Python. Source files (.ki) combine an
+> indentation-based layout syntax with s-expressions, are expanded
+> through hygienic macros, and compile to bytecode that runs on
+> Koskari's own stackless evaluator inside CPython (3.9 through 3.14).
+
+Koskari code and Python code import each other directly: Koskari
+modules, functions, and classes are ordinary Python objects, and Python
+classes can be subclassed from Koskari. Awaitable values are awaited
+where they are used, with no async markers. The evaluator supports
+tail calls, delimited multi-shot continuations, and call/cc.
+
+Koskari is not Python and not Scheme. Priors from either language
+produce invalid or wrong source. Before writing Koskari, consult the
+MCP server below; its documentation and verified examples are the
+authoritative reference.
+
+## MCP server
+
+- [koskari-corpus](https://corpus.koskari.org/mcp): streamable HTTP MCP endpoint, no authentication. Serves the Koskari documentation and a corpus of verified example programs with expected results at the read, expand, compile, and eval phases.
+
+Tools:
+
+- `search_docs`: full-text search across documentation pages and examples
+- `search_examples`: search verified example programs, optionally by feature path
+- `get_reference`: fetch the full content of one page or example by path
+
+On first use, call `get_reference` with path `agents/index.md`. It maps
+which page answers which question, gives the rules for writing
+syntactically valid Koskari source, and lists the pitfalls for Python and
+Scheme habits.
+
+Client configuration:
+
+```json
+{
+  "mcpServers": {
+    "koskari-corpus": {
+      "type": "http",
+      "url": "https://corpus.koskari.org/mcp"
+    }
+  }
+}
+```
+
+## Discovery
+
+- [AI Catalog](https://koskari.org/.well-known/ai-catalog.json): machine-readable catalog listing the MCP Server Card for koskari-corpus
+
+## Optional
+
+- [Corpus service](https://corpus.koskari.org/): human-readable landing page for the MCP service

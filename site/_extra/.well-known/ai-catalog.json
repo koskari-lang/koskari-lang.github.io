@@ -1,0 +1,37 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Koskari",
+    "identifier": "koskari.org",
+    "documentationUrl": "https://koskari.org/llms.txt",
+    "logoUrl": "https://koskari.org/_static/koskari-icon.svg"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:koskari.org:mcp:koskari-corpus",
+      "type": "application/mcp-server-card+json",
+      "tags": ["koskari", "lisp", "python", "documentation", "examples"],
+      "data": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+        "name": "org.koskari/koskari-corpus",
+        "version": "0.1.0",
+        "title": "Koskari corpus",
+        "description": "Koskari language documentation and verified example programs, searchable by agents",
+        "websiteUrl": "https://koskari.org/",
+        "icons": [
+          {
+            "src": "https://corpus.koskari.org/koskari-icon.svg",
+            "mimeType": "image/svg+xml",
+            "sizes": ["any"]
+          }
+        ],
+        "remotes": [
+          {
+            "type": "streamable-http",
+            "url": "https://corpus.koskari.org/mcp"
+          }
+        ]
+      }
+    }
+  ]
+}

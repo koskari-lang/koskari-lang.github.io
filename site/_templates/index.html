@@ -1,0 +1,27 @@
+{%- extends "layout.html" %}
+
+{%- block title %}Koskari -- a Lisp that lives with Python{% endblock %}
+
+{%- block meta %}
+  <meta name="description" content="Koskari is a Lisp that runs on its own stackless evaluator inside CPython. It awaits without async markers, reads indentation as layout, and takes Python modules, classes, and objects both ways.">
+  <meta property="og:title" content="Koskari">
+  <meta property="og:description" content="A Lisp that lives with Python. First-class continuations, ambient async, indentation layout.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://koskari.org/">
+  <meta property="og:image" content="https://koskari.org/_static/koskari-icon-256.png">
+  <link rel="canonical" href="https://koskari.org/">
+{%- endblock %}
+
+{%- block content %}
+  <section class="ko-soon">
+    <img class="ko-soon-mark" src="/_static/koskari-icon.svg" alt="" width="132" height="132">
+    <h1 class="ko-h1">A Lisp that lives<br><span class="ko-accent">with Python.</span></h1>
+    <p class="ko-lede">Koskari is a Lisp that runs on its own stackless evaluator inside CPython. It awaits without async markers, reads indentation as layout, and takes Python modules, classes, and objects both ways.</p>
+    <span class="ko-soon-pill">Coming soon</span>
+  </section>
+
+  <section class="ko-download ko-soon-agents">
+    <h2 class="ko-download-title">For agents</h2>
+    <p class="ko-download-lede">The documentation and a corpus of verified example programs are served over MCP at <span class="ko-soon-code">https://corpus.koskari.org/mcp</span>. A summary for language models is at <a class="ko-ink-link" href="/llms.txt">/llms.txt</a>.</p>
+  </section>
+{%- endblock %}
